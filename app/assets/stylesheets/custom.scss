@@ -1,5 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
 
 /* universal */
 
@@ -17,15 +20,11 @@ textarea {
 
 .center {
   text-align: center;
-}
 
-.center h1 {
-  margin-bottom: 10px;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
-
-// img {
-//   display: none;
-// }
 
 /* typography */
 
@@ -51,7 +50,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: $gray-light;
 }
 
 p {
@@ -65,16 +64,16 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-}
 
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
+  &:hover {
+    color: $gray-medium-light;
+    text-decoration: none;
+  }
 }
 
 /* footer */
@@ -82,28 +81,28 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
 
-footer a {
-  color: #555;
-}
+  a {
+    color: $gray;
 
-footer a:hover {
-  color: #222;
-}
+    &:hover {
+      color: $gray-darker;
+    }
+  }
 
-footer small {
-  float: left;
-}
+  small {
+    float: left;
+  }
 
-footer ul {
-  float: right;
-  list-style: none;
-}
+  ul {
+    float: right;
+    list-style: none;
 
-footer ul li {
-  float: left;
-  margin-left: 15px;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 }
