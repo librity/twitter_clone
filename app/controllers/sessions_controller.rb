@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    user&.authenticate(params[:session][:password]) ?
-    authenticate_user(user) :
+    @user = User.find_by(email: params[:session][:email].downcase)
+    @user&.authenticate(params[:session][:password]) ?
+    authenticate_user(@user) :
     dont_authenticate_user
   end
 
