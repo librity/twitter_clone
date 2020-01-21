@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   def authenticate_user(user)
     log_in(user)
     params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-    redirect_to user
+    redirect_back_to user
   end
 
   def dont_authenticate_user
