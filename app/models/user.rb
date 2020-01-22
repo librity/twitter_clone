@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  attr_accessor :remember_token
-
-  before_save { self.email = email.downcase }
+  attr_accessor :remember_token, :activation_token
+  before_create :create_activation_digest
+  before_save { email.downcase! }
 
   validates :name, presence: true, length: { maximum: 50 }
 
@@ -44,5 +44,13 @@ class User < ApplicationRecord
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  private
+
+  # Creates and assigns the activation token and digest.
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 end
