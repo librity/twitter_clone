@@ -19,7 +19,7 @@ class AccountActivationsController < ApplicationController
 
   def log_user_in
     log_in @user
-    flash[:success] = 'Account activate!'
+    flash[:success] = 'Account activated!'
     redirect_to @user
   end
 
