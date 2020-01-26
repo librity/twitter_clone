@@ -6,6 +6,7 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
+    @micropost.image.attach(params[:micropost][:image])
     @micropost.save ? handle_save_success : handle_save_failure
   end
 
@@ -18,7 +19,7 @@ class MicropostsController < ApplicationController
   private
 
   def micropost_params
-    params.require(:micropost).permit(:content)
+    params.require(:micropost).permit(:content, :image)
   end
 
   def handle_save_success
