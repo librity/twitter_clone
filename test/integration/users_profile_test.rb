@@ -19,4 +19,17 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
       assert_match micropost.content, response.body
     end
   end
+
+  test 'stats with pluralization' do
+    get user_path(@user)
+    assert_select 'div.stats', count: 1
+    followers = @user.followers.count
+    following = @user.following.count
+    assert_select 'strong', followers.to_s
+    assert_select 'strong', following.to_s
+    assert_select 'a', test: 'followers'
+    assert_select 'a', test: 'following'
+    get user_path(users(:malory))
+    assert_select 'a', test: 'follower'
+  end
 end
