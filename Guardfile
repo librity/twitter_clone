@@ -55,7 +55,7 @@ end
 # Returns the controller tests corresponding to the given resource.
 def controller_test(resource)
   "test/controllers/#{resource}_controller_test.rb"
-  end
+end
 
 # Returns all tests for the given resource.
 def resource_tests(resource)
