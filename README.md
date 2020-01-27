@@ -1,5 +1,15 @@
 # Ruby on Rails Tutorial sample application
 
+## What's next
+- https://www.learnenough.com/all-access
+- https://launchschool.com/railstutorial
+- https://turing.io/
+- https://bloc.io/
+- https://www.thinkful.com/a/railstutorial
+- https://pragmaticstudio.com/refs/railstutorial
+- https://tutorials.railsapps.org/hartl
+- https://lambdaschool.com 
+
 ## Reference implementation
 
 This is the reference implementation of the sample application from 
